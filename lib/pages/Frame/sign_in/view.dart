@@ -1,13 +1,14 @@
+import 'package:expense_app_tracker/core/Widgets/custum_button.dart';
 import 'package:expense_app_tracker/core/helpers/helpers.dart';
+import 'package:expense_app_tracker/pages/Frame/sign_in/controller.dart';
 import 'package:expense_app_tracker/pages/Frame/sign_in/widgets/already_have_an_account.dart';
 import 'package:expense_app_tracker/pages/Frame/sign_in/widgets/dividers_with_or.dart';
 import 'package:expense_app_tracker/pages/Frame/sign_in/widgets/sign_in_with_tile.dart';
-import 'package:expense_app_tracker/pages/Frame/welcome/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class SignInPage extends GetView<WelcomeController> {
+class SignInPage extends GetView<SignInController> {
   const SignInPage({super.key});
 
   @override
@@ -48,6 +49,14 @@ class SignInPage extends GetView<WelcomeController> {
               ),
               verticalSpace(50.h),
               AlreadyhaveAnAccount(onTap: () {}),
+              verticalSpace(50.h),
+              MyButton(
+                text: "Sign Out",
+                onPressed: () {
+                  controller.googleSignOut();
+                  print("... you sign out");
+                },
+              )
             ],
           ),
         ),

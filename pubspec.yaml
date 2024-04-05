@@ -50,6 +50,9 @@ dependencies:
   crypto: ^3.0.3
   cached_network_image: ^3.3.1
   fluttertoast: ^8.2.4
+  google_sign_in: ^6.2.1
+  firebase_core: ^2.27.0
+  firebase_auth: ^4.19.0
 
 dev_dependencies:
   flutter_test:

@@ -1,6 +1,8 @@
 import 'package:expense_app_tracker/core/helpers/helpers.dart';
+import 'package:expense_app_tracker/pages/Frame/sign_in/controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class SignInWith extends StatelessWidget {
   final String signInType;
@@ -14,8 +16,9 @@ class SignInWith extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var signInController = Get.put(SignInController());
     return InkWell(
-      onTap: onTap ?? () => print(signInType),
+      onTap: onTap ?? () => signInController.handleSignIn(signInImgName),
       child: Container(
         padding: EdgeInsets.only(left: 35.h, top: 8.h, bottom: 8.h),
         width: 315.w,
